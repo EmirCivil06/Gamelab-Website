@@ -7,7 +7,7 @@ export default function Contact() {
     <>
       <div className="contact-bg"></div>
       <div id="bg-image"></div>
-      <div id="contact-us-text"><p id="contact-us-text">Ne Duruyorsunuz? Haydi!</p> <br></br> <p>GameLab topluluğu olarak seni de aramızda görmekten mutluluk duyarız!</p></div>
+      <div id="contact-us-text"><p id="contact-us-text">Ne Duruyorsun? Haydi!</p> <br></br> <p>GameLab topluluğu olarak seni de aramızda görmekten mutluluk duyarız!</p></div>
       <ContactBar />
       <span id="span1">ya da...</span>
       <div className="contact-us-dm">
