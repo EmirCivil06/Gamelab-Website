@@ -8,46 +8,82 @@
     src: url(../assets/Pixelon.ttf);
 }
 
-html:has(.contact-bar) {
-    height: clamp(10rem, 30vw, 45rem) !important;
-    font-family: Pixeloid, 'Arial', sans-serif  !important;
-}
+/* KALDIRILDI: Bu karmaşık ve sorunlu seçicileri kaldırıyoruz. */
+/* Sayfanın yüksekliğini içeriğin belirlemesine izin vermek daha doğrudur. */
 
+
+/* ARKA PLAN STİLLERİ (Değişiklik yok) */
 .contact-bg {
     position: fixed;
-    z-index: -1;
-    display: inline-block;
+    z-index: -2;
     top: 0;
-    bottom: 0;
+    left: 0;
     width: 100%;
-    height: clamp(100vh, 100vw, 100vh);
-    background: linear-gradient(135deg, #74ebd5cc 0%, #acb6e5be 100%);
+    height: 100%;
+    background: linear-gradient(135deg, #74ebd5e1 0%, #acb6e5e1 100%);
 }
 
 div#bg-image {
     position: fixed;
-    z-index: -2;
-    display: inline-block;
+    z-index: -1;
     top: 0;
-    bottom: 0;
+    left: 0;
     width: 100%;
-    height: clamp(100vh, 100vw, 100vh);
+    height: 100%;
     background: url(../assets/gamelabsolote.png) center center/cover;
     background-position: top left;
     background-size:105px;
     background-repeat: repeat;
-    opacity: 0.2;
+    opacity: 0;
 }
 
-.email-icon:hover {
-    transform: scale(1.1);
+/* YENİ: Ana Taşıyıcı */
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Elemanları dikeyde sırala */
+    align-items: center;   /* Elemanları yatayda ortala */
+    gap: 1.5rem;           /* Elemanlar arasına dikey boşluk ekle */
+    padding: clamp(4rem, 5.25vw, 6rem) 1rem; /* Üst/alt ve yan boşluklar */
+    width: 100%;
+    box-sizing: border-box; /* Padding'in genişliği etkilememesi için */
+    font-family: Pixeloid, 'Arial', sans-serif !important;
+}
+
+div#contact-us-text {
+    /* KALDIRILDI: position, top, margin. Artık Flexbox bunları yönetiyor. */
+    background-color: azure;
+    border-radius: 30px;
+    width: clamp(60%, 75%, 90%); /* Genişliği esnek tut */
+    padding: clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.222);
+}
+
+p#contact-us-text {
+    font-family: Pixelon, 'Arial', sans-serif;
+    font-size: clamp(1.5rem, 2.35vw, 3.2rem);
+    font-weight: bolder;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+    font-size: clamp(0.9rem, 1.4vw, 1.6rem);
+    text-align: center;
+}
+
+span#span1 {
+    /* KALDIRILDI: position, top, left, transform */
+    font-size: clamp(0.75rem, 2.25vw, 1.1rem);
+    color: #333;
+    z-index: 1; /* Diğer elemanların üzerinde kalması için gerekebilir */
 }
 
 .contact-us-dm {
-    position: absolute;
-    top: clamp(32.5rem, 37.5vw, 45rem);
-    left: 50%;
-    transform: translate(-50%, 0%);
+    /* KALDIRILDI: position, top, left, transform */
     font-size: clamp(0.8rem, 2.5vw, 1.25rem);
     color: #333;
     z-index: 1;
@@ -59,73 +95,10 @@ div#bg-image {
     text-align: center;
 }
 
-span#span1 {
-    position: absolute;
-    top: clamp(30rem, 35vw, 40rem);
-    left: 50%;
-    transform: translate(-50%, 0%);
-    font-size: clamp(0.75rem, 2.25vw, 1.1rem);
-    color: #333;
-    z-index: 1;
+.email-icon:hover {
+    transform: scale(1.1);
 }
 
-div#contact-us-text {
-    position: relative;
-    background-color: azure;
-    border-radius: 30px;
-
-    /* NEW: let the container size itself and contain its text */
-    width: min(330px, 90%);
-    margin: clamp(0.75rem, 1vw, 2.5rem) auto;   /* push the whole block down responsively */
-    padding: clamp(0.75rem, 3.5vw, 2.5rem);  /* internal spacing so text sits inside the box */
-    padding-top: clamp(1.5rem, 4vw, 3rem); /* extra top padding for breathing room */
-    padding-bottom: clamp(1.5rem, 4vw, 3rem); /* extra bottom padding for breathing room */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(0rem, 0vw, 0.5rem);
-    text-align: center;
-    top: clamp(4rem, 5vw, 6rem);
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.222);
-}
-
-/* main heading inside the container — remove position/top */
-p#contact-us-text {
-    font-family: Pixelon, 'Arial', sans-serif;
-    font-size: clamp(1.4rem, 2.25vw, 3.2rem);
-    font-weight: bold;
-    margin: 0;            /* keep spacing inside using container padding/gap */
-}
-
-/* generic paragraph styling — remove position/top */
-p {
-    margin: 0;
-    font-size: clamp(0.8rem, 1.2vw, 1.5rem);
-    text-align: center;
-}
-
-@media (min-width: 600px) {
-    body:has(.contact-bar) {
-        height: clamp(25rem, 40vw, 60rem) !important;
-    }
-    
-    .contact-us-dm {
-        top: clamp(24.5rem, 42.5vw, 45rem);
-        margin-bottom: 0;
-    }
-
-    span#span1 {
-        top: clamp(23rem, 39.5vw, 42rem);
-    }
-
-    div#contact-us-text {
-        top: clamp(2rem, 3vw, 5rem);
-        padding: clamp(1.1rem, 1.95vw, 2.5rem) ;
-    }
-
-    .contact-bar {
-        top: clamp(12.5rem, 22.5vw, 27rem);
-        padding: clamp(20px, 2vw, 30px) clamp(10px, 2vw, 15px);
-        gap: clamp(20px, 2vw, 40px);
-    }
-}
+/* Medya Sorguları Temizlendi */
+/* Artık manuel pozisyon ayarlamalarına gerek olmadığı için eski media query'ler kaldırıldı. */
+/* Gerekirse font boyutu veya boşluk gibi değerleri düzenlemek için yeni kurallar eklenebilir. */
