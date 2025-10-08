@@ -1,0 +1,43 @@
+html {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1b1b1b;
+    background-color: #e7e7e7;
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    margin: 0px 0px 5px 0px;
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: #1d9bf0;
+}
+
+button:focus {
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #1d9bf0;
+}

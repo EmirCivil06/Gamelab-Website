@@ -1,0 +1,104 @@
+@font-face {
+    font-family: Pixeloid;
+    src: url(../assets/Pixeloid2.ttf);
+}
+
+@font-face {
+    font-family: Pixelon;
+    src: url(../assets/Pixelon.ttf);
+}
+
+html:has(.contact-bar) {
+    height: clamp(10rem, 30vw, 45rem) !important;
+    font-family: Pixeloid, 'Arial', sans-serif  !important;
+}
+
+.contact-bg {
+    position: fixed;
+    z-index: -1;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: clamp(100vh, 100vw, 100vh);
+    background: linear-gradient(135deg, #74ebd5cc 0%, #acb6e5be 100%);
+}
+
+div#bg-image {
+    position: fixed;
+    z-index: -2;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: clamp(100vh, 100vw, 100vh);
+    background: url(../assets/gamelabsolote.png) center center/cover;
+    background-size: 100px;
+    background-repeat: repeat;
+    opacity: 0.2;
+}
+
+.email-icon:hover {
+    transform: scale(1.1);
+}
+
+.contact-us-dm {
+    position: absolute;
+    top: clamp(32.5rem, 37.5vw, 45rem);
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: clamp(0.8rem, 2.5vw, 1.25rem);
+    color: #333;
+    z-index: 1;
+    background-color: azure;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    text-align: center;
+}
+
+span#span1 {
+    position: absolute;
+    top: clamp(30rem, 35vw, 40rem);
+    left: 50%;
+    transform: translate(-50%, 0%);
+    font-size: 12px;
+    color: #333;
+    z-index: 1;
+}
+
+div#contact-us-text {
+    position: relative;
+    background-color: azure;
+    border-radius: 30px;
+
+    /* NEW: let the container size itself and contain its text */
+    width: min(330px, 92%);
+    margin: clamp(0.75rem, 4vw, 3rem) auto;   /* push the whole block down responsively */
+    padding: clamp(0.75rem, 3.5vw, 2.5rem);  /* internal spacing so text sits inside the box */
+    padding-top: clamp(1.5rem, 4vw, 3rem); /* extra top padding for breathing room */
+    padding-bottom: clamp(1.5rem, 4vw, 3rem); /* extra bottom padding for breathing room */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(0rem, 0vw, 0.5rem);
+    text-align: center;
+    top: clamp(4rem, 5vw, 6rem);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.222);
+}
+
+/* main heading inside the container — remove position/top */
+p#contact-us-text {
+    font-family: Pixelon, 'Arial', sans-serif;
+    font-size: clamp(1.4rem, 5vw, 6rem);
+    font-weight: bold;
+    margin: 0;            /* keep spacing inside using container padding/gap */
+}
+
+/* generic paragraph styling — remove position/top */
+p {
+    margin: 0;
+    font-size: clamp(0.75rem, 2vw, 2.4rem);
+    text-align: center;
+}
