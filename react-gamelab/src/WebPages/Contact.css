@@ -8,8 +8,18 @@
     src: url(../assets/Pixelon.ttf);
 }
 
-/* KALDIRILDI: Bu karmaşık ve sorunlu seçicileri kaldırıyoruz. */
+/* Arka plan resminin kayması*/
+@keyframes backgroundAnimation {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 512px 512px;
+    }
+}
+
 /* Sayfanın yüksekliğini içeriğin belirlemesine izin vermek daha doğrudur. */
+/* Ancak overflow-y'yi si- */
 
 
 /* ARKA PLAN STİLLERİ (Değişiklik yok) */
@@ -35,6 +45,7 @@ div#bg-image {
     background-size:128px;
     background-repeat: repeat;
     opacity: 0.2;
+    animation: backgroundAnimation 50s linear infinite;
 }
 
 /* YENİ: Ana Taşıyıcı */
@@ -95,8 +106,18 @@ span#span1 {
     text-align: center;
 }
 
+.email-icon {
+    width: clamp(18px, 3vw, 24px);
+    height: clamp(18px, 3vw, 24px);
+    transition: transform 0.3s;
+}
+
 .email-icon:hover {
     transform: scale(1.1);
+}
+
+img#secret {
+    display: none;
 }
 
 /* Medya Sorguları Temizlendi */
@@ -107,5 +128,11 @@ span#span1 {
 @media (min-width: 1000px) {
     div#bg-image {
         background-size: 256px;
+    }
+}
+
+@media (min-height: 600px) {
+    body:has(.contact-bg) {
+        overflow-y: hidden;
     }
 }

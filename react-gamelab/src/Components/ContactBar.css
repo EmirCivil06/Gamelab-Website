@@ -3,13 +3,13 @@
 .contact-bar {
     /* KALDIRILDI: position, top, left, transform - Artık flex container içinde doğal akışta yer alacak */
     background: linear-gradient(135deg, rgb(255, 0, 208), rgb(0, 255, 0));
-    padding: 30px 5px 20px 5px;
+    padding: 30px 0px 20px 0px;
     text-align: center;
     border-top: 1px solid #e7e7e7;
     border-radius: 20px;
     display: flex;
     justify-content: center;
-    gap: 40px;
+    gap: clamp(1.125rem, 3vw, 2.5rem); /* Elemanlar arasına yatay boşluk ekle */
     /* z-index artık gerekli değil */
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
     width: fit-content; /* İçeriğine göre genişlesin */

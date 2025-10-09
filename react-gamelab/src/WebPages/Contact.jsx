@@ -30,7 +30,6 @@ export default function Contact() {
             style={{ display: "contents" }}
           >
             <FaEnvelope
-              size={18}
               className="email-icon"
               color="#1d9bf0"
               style={{
@@ -45,6 +44,7 @@ export default function Contact() {
           </a>
         </div>
       </div>
+      <img id="secret"></img>
     </>
   );
 }
