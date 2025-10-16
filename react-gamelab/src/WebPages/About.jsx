@@ -1,6 +1,6 @@
 import background_image from "../assets/map.png"
 import "./About.css";
-import BackgroundTemplate from "../Components/Background.jsx";
+import BackgroundTemplate from "../Components/Background/Background.jsx";
 
 function About() {
   return (

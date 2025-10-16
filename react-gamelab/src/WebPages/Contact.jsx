@@ -1,4 +1,4 @@
-import ContactBar from "../Components/ContactBar";
+import ContactBar from "../Components/ContactBar/ContactBar";
 import "./Contact.css";
 import { FaEnvelope } from "react-icons/fa";
 
@@ -44,7 +44,6 @@ export default function Contact() {
           </a>
         </div>
       </div>
-      <img id="secret"></img>
     </>
   );
 }
