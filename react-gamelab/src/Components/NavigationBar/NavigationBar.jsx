@@ -9,8 +9,8 @@ export default function NavigationBar() {
         <Link to="/projects" style={{display: 'contents'}}>
         <button>Projeler</button>
         </Link>
-        <Link to="/team" style={{display: 'contents'}}>
-        <button>Ekibimiz</button>
+        <Link to="/announcements" style={{display: 'contents'}}>
+        <button>Duyurular</button>
         </Link>
         <Link to="/contact" style={{display: 'contents'}}>
         <button>İletişim</button>
