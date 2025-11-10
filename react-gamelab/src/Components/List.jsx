@@ -1,6 +1,7 @@
 import AnnouncementCard from "./AnnouncmentCard";
 
-function List({color, radiuses}) {
+/* Kart komponentlerini bir dizi gibi saklayacak bir element */
+function List({color, radiuses, cardColor = "beige"}) {
     const items = [{id: 1, header: "GameLab Duyuru", announcement: "blablablablablablablabla", color1: "beige"},
                     {id: 2, header: "GameLab Duyuru", announcement: "blablablablablablablabla", color1: "beige"},
                     {id: 3, header: "GameLab Duyuru", announcement: "blablablablablablablabla", color1: "beige"},
