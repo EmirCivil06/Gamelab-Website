@@ -1,5 +1,6 @@
 import BackgroundTemplate from "../Components/Background/Background";
 import "./Announcements.css";
+import List from "../Components/List";
 
 function Announcements() {
   return (
@@ -8,32 +9,7 @@ function Announcements() {
       <BackgroundTemplate />
       <div className="announcements-container">
         {/* İki ayrı bölüm olacak: Duyurular ve Eğlendirme. Eğlendirme bölümünde bir karakter animasyonu olacak */}
-        <div className="announcements-section">
-          <div className="card-example">
-            <b>Duyuru Örneği</b>
-            <br></br>saat 15.00 unity eğitimi var mesela
-          </div>
-        <div className="card-example">
-            <b>Duyuru Örneği</b>
-            <br></br>saat 15.00 unity eğitimi var mesela
-          </div>
-        <div className="card-example">
-            <b>Duyuru Örneği</b>
-            <br></br>saat 15.00 unity eğitimi var mesela
-          </div>
-        <div className="card-example">
-            <b>Duyuru Örneği</b>
-            <br></br>saat 15.00 unity eğitimi var mesela
-          </div>
-        <div className="card-example">
-            <b>Duyuru Örneği</b>
-            <br></br>saat 15.00 unity eğitimi var mesela
-          </div>
-        <div className="card-example">
-            <b>Duyuru Örneği</b>
-            <br></br>saat 15.00 unity eğitimi var mesela
-          </div>
-        </div>
+          <List color="linear-gradient(135deg, #fff4c0ff 0%, #ffcab5ff 100%)" radiuses="0 0 60px 0"/>
         <div className="entertainment-section">animasyon</div>
       </div>
     </>

@@ -5,33 +5,22 @@ html:has(.announcements-container) {
 
 .announcements-container {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     height: 100vh;
-} 
+}
 
-.announcements-section {
-    padding-top: clamp(3.75rem, 4vw, 4.5rem);
-    padding-bottom: clamp(3rem, 3.25vw, 4.5rem);
-    background: linear-gradient(135deg, #fff5d5 0%, #ffc99f 100%);
-    border-radius: 0 0 60px 0;
-    padding-left: 20px;
-    padding-right: 30px;
-    overflow-y: auto;
+.scrollbar {
+    padding: 20px;
+    padding-top: 50px;
     display: flex;
     flex-direction: column;
-    gap: clamp(1rem, 1vw, 1.2rem);
+    margin-bottom: 0px;
     flex: 2;
+    overflow-y: auto;
 }
+
 
 .entertainment-section {
-    flex: 1;
-}
-
-.card-example  {
-    font-size: clamp(0.75rem, 1.5vw, 2rem);
     display: flex;
-    flex-direction: column;
-    padding: 1.2rem;
-    background: linear-gradient(135deg, rgb(117, 205, 50) 0%, lime 100%);
-    border-radius: 20px;
+    flex: 1;
 }
