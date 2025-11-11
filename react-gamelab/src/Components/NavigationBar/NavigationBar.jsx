@@ -1,8 +1,11 @@
 import "./NavigationBar.css";
 import { Link } from "react-router-dom";
 import icon from "../../assets/icon.jpg";
+
 // Web sayfaları arası geçiş için kullanılan bileşen
 export default function NavigationBar() {
+
+
   return (
     <div className="Bar">
       <div className="right">      

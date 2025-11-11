@@ -12,14 +12,15 @@ html:has(.announcements-container) {
 .scrollbar {
     margin-top: 1.8rem;
     font-size: clamp(1.25rem, 1.35vw, 1.6rem);
-    padding: 20px 50px 20px 30px;
+    padding: 40px;
+    padding-right: 60px;
     display: flex;
     flex-direction: column;
     margin-bottom: 0px;
     flex: 1.75;
     overflow-y: auto;
     direction: rtl;
-    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.35);
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -36,7 +37,7 @@ html:has(.announcements-container) {
     border-radius: 25px;
     padding: 18px;
     margin: 7px 0;
-    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.35);
+    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
 }
 
 .entertainment-section {

@@ -4,6 +4,7 @@ import About from "./WebPages/About";
 import Announcements from "./WebPages/Announcements";
 import Layout from "./Components/Layout";
 import Contact from "./WebPages/Contact";
+import Admin from "./WebPages/Administration";
 
 function App() {
   return (<>
@@ -12,6 +13,7 @@ function App() {
       <Route element={<Layout/>}>
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/" element={<About/>}/>
+        <Route path="/test" element={<Admin/>}/>
         <Route path="/announcements" element={<Announcements/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Route>
