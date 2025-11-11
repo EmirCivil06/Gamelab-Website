@@ -1,9 +1,10 @@
 import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import Projects from "./WebPages/Projects";
 import About from "./WebPages/About";
-import Team from "./WebPages/Team";
+import Announcements from "./WebPages/Announcements";
 import Layout from "./Components/Layout";
 import Contact from "./WebPages/Contact";
+import Admin from "./WebPages/Administration";
 
 function App() {
   return (<>
@@ -12,7 +13,8 @@ function App() {
       <Route element={<Layout/>}>
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/" element={<About/>}/>
-        <Route path="/team" element={<Team/>}/>
+        <Route path="/test" element={<Admin/>}/>
+        <Route path="/announcements" element={<Announcements/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Route>
     </Routes>
