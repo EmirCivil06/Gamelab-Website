@@ -4,7 +4,7 @@ import About from "./WebPages/About";
 import Announcements from "./WebPages/Announcements";
 import Layout from "./Components/Layout";
 import Contact from "./WebPages/Contact";
-import Admin from "./WebPages/Administration";
+import Admin from "./Administration/Administration";
 
 function App() {
   return (<>

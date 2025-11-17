@@ -5,22 +5,22 @@ html:has(.announcements-container) {
 
 .announcements-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     height: 100vh;
 }
 
 .scrollbar {
-    margin-top: 1.8rem;
     font-size: clamp(1.25rem, 1.35vw, 1.6rem);
     padding: 40px;
     padding-right: 60px;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0px;
-    flex: 1.75;
-    overflow-y: auto;
-    direction: rtl;
-    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+.placeholder {
+    font-size: clamp(1.35rem, 1.45vw, 1.75rem);
+    font-weight: bolder;
+    text-align: center;
+    padding: 60px;
 }
 
 .scrollbar::-webkit-scrollbar {
@@ -36,11 +36,12 @@ html:has(.announcements-container) {
 .scrollbar li {
     border-radius: 25px;
     padding: 18px;
+    line-height: 1.8;
     margin: 7px 0;
-    box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
 }
 
 .entertainment-section {
     display: flex;
-    flex: 1.25;
+    flex: 0.25;
 }
