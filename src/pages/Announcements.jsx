@@ -1,5 +1,4 @@
 import BackgroundTemplate from "../components/Background";
-import "./Announcements.css";
 import List from "../Components/List";
 
 function Announcements() {
