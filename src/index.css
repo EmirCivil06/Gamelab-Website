@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+.cb-item {
+    @apply flex flex-col items-center my-0 mx-[clamp(0.25rem,2vw,1.5rem)] text-[clamp(1rem,2vw,1.2rem)] text-white text-center
+}
+
+.cb-img {
+    @apply w-[clamp(5rem,10vw,8rem)] h-[clamp(5rem,10vw,8rem)] mx-[clamp(0.5rem,1.5vw,1.75rem)] mt-0 mb-2.5 transition-transform drop-shadow-lg hover:scale-110 active:scale-90
+}
+
+.page-default {
+    @apply mt-[clamp(3.35rem,3.6rem,4.1rem)]
+}
+
+.navbar-btn {
+    @apply bg-none border-none text-white text-[clamp(14px,1.75vw,17.5px)] my-1 mx-0.5 cursor-pointer hover:text-gray-400 active:scale-90 sm:my-0 sm:mx-[clamp(0.6rem,1vw,1.75rem)] transition duration-300 select-none
+}
+
+@layer base {
+    @media (min-height: 600px) {
+        body:has(.contactPage) {
+            @apply overflow-y-hidden
+        }
+    }
+}
+
+@theme {
+    --animate-background: backgroundAnim 50s linear infinite
+}
+
+@keyframes backgroundAnim {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 512px 512px;
+    }
+}
+
+@font-face {
+    font-family: 'Pixelon';
+    src: url(../src/assets/Pixelon.ttf);
+}
+
+@font-face {
+    font-family: 'Pixeloid2';
+    src: url(../src/assets/Pixeloid2.ttf);
+}
+
+@font-face {
+    font-family: 'PixeloidMono';
+    src: url(../src/assets/PixeloidMono.ttf);
+}

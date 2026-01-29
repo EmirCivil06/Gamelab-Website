@@ -1,0 +1,6 @@
+/* Background.css */
+@media (min-width: 1000px) {
+    div#repeating-bg {
+        background-size: 256px !important;
+    }
+}

@@ -1,0 +1,92 @@
+/* Gezinme çubuğu css */
+
+@font-face {
+    font-family: 'Pixelon';
+    src: url(../assets/Pixelon.ttf);
+}
+
+.Bar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: linear-gradient(to right, #3b82f6, #14b8a6);
+    display: flex; /* fixed */
+    align-items: center;
+    justify-content: space-between; /* space between left and right */
+    padding: 8px 30px; /* adjust as needed */
+    border-radius: 0px 0px 30px 30px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
+    z-index: 1000; /* ensure it stays on top */
+}
+
+.Bar button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: clamp(12px, 2vw, 20px);
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.Bar button.us:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+.Bar button:hover {
+    color: #a3a3a3;
+}
+
+.Bar button.us {
+    font-family: Pixelon, sans-serif;
+    font-size: clamp(14px, 2.5vw, 20px);
+    font-weight: bold;
+    /* Remove position: absolute and left/top */
+    background: linear-gradient(to left, #3b3bf6, #6500c4);
+    padding-top: 4px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.288);
+}
+
+.Bar button.us .icon {
+    width: clamp(20px, 2.5vw, 30px);
+    height: clamp(20px, 2.5vw, 30px);
+    margin-right: 8px;
+    margin-bottom: 4px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.Bar button:active {
+    transform: scale(0.9);
+}
+
+.Bar button.us:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+    .Bar {
+        padding: 10px 15px;
+    }
+
+    .Bar button {
+        margin: 4px 2px;
+    }
+
+    .Bar button.us {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .Bar button.us .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 5px;
+        margin-bottom: 2px;
+    }
+    
+}
