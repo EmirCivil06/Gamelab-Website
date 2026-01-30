@@ -1,4 +1,4 @@
-function Projects() {
+export default function Projects() {
   return (
     <>
       <h1>Projects Page</h1>
@@ -13,4 +13,4 @@ function Projects() {
     </>
   );
 }
-export default Projects;
+;

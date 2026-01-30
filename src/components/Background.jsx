@@ -13,7 +13,7 @@ export default function BackgroundTemplate({gradientColor = "linear-gradient(to 
         backgroundRepeat: "repeat",
         opacity: "0.2"
     }
-
+    // !!! TAILWIND CSS'E GEÇİRİLMEDİ
     const styleBg = {
         position: "fixed",
         top: "0",

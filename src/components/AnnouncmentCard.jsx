@@ -2,6 +2,8 @@
 import edu from "../assets/edu_map.png"
 import fun from "../assets/fun_map.png"
 
+// !!! ŞİMDİLİK KULLANIM DIŞI
+
 function AnnouncementCard({ header, announcement, place, time, eventType }) {
     var imageUrl = "";
     var gradient = "linear-gradient(135deg, rgba(23, 69, 255, 0.85) 0%, rgba(55, 155, 255, 0.85) 100%)";

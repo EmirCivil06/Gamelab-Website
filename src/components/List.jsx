@@ -1,6 +1,8 @@
 import AnnouncementCard from "./AnnouncmentCard";
 
 /* Kart komponentlerini bir dizi gibi saklayacak bir element */
+
+// !!! ŞİMDİLİK KULLANIM DIŞI
 function List({color, radiuses, cardColor = `beige`}) {
     const items = [
         {id: 1, header:"C Eğitimlerimiz Devam Ediyor!", announcement:"C Programlama Dili eğitimimiz yeniden başlıyor.", p:"PAÜ Müh. Fak. A Blok", t:"Her Pazartesi 17.30-19.00", eType: "edu"

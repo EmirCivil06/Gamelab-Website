@@ -2,6 +2,7 @@ import BackgroundTemplate from "../components/Background";
 import List from "../Components/List";
 
 function Announcements() {
+  // !!! ŞİMDİLİK KULLANIM DIŞI
   const list = (
     <List
       color="linear-gradient(135deg, #fff4c0ff 0%, #ffcab5ff 100%)"

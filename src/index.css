@@ -1,11 +1,12 @@
 @import "tailwindcss";
 
+/* Birden fazla olan element için tek tek uğraşmak yerine farklı stil sınıfları */
 .cb-item {
-    @apply flex flex-col items-center my-0 mx-[clamp(0.25rem,2vw,1.5rem)] text-[clamp(1rem,2vw,1.2rem)] text-white text-center
+    @apply flex flex-col items-center my-0 mx-[clamp(0.2rem,2vw,1.5rem)] text-[clamp(0.775rem,2vw,1.2rem)] text-white text-center
 }
 
 .cb-img {
-    @apply w-[clamp(5rem,10vw,8rem)] h-[clamp(5rem,10vw,8rem)] mx-[clamp(0.5rem,1.5vw,1.75rem)] mt-0 mb-2.5 transition-transform drop-shadow-lg hover:scale-110 active:scale-90
+    @apply w-[clamp(4.5rem,10vw,8rem)] h-[clamp(4.5rem,10vw,8rem)] mx-[clamp(0.5rem,1.5vw,1.75rem)] mt-0 mb-2.5 transition-transform drop-shadow-lg hover:scale-110 active:scale-90
 }
 
 .page-default {
@@ -16,6 +17,7 @@
     @apply bg-none border-none text-white text-[clamp(14px,1.75vw,17.5px)] my-1 mx-0.5 cursor-pointer hover:text-gray-400 active:scale-90 sm:my-0 sm:mx-[clamp(0.6rem,1vw,1.75rem)] transition duration-300 select-none
 }
 
+/* Bize ulaşın sayfasının scrollbarı olmayacak */
 @layer base {
     @media (min-height: 600px) {
         body:has(.contactPage) {
@@ -24,6 +26,7 @@
     }
 }
 
+/* Arkaplan animasyonu */
 @theme {
     --animate-background: backgroundAnim 50s linear infinite
 }
@@ -37,6 +40,7 @@
     }
 }
 
+/* Fontlar */
 @font-face {
     font-family: 'Pixelon';
     src: url(../src/assets/Pixelon.ttf);
