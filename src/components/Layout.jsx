@@ -1,4 +1,4 @@
-import NavigationBar from "../Components/NavigationBar";
+import NavigationBar from "./NavigationBar";
 import { Outlet } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 

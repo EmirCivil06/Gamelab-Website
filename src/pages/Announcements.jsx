@@ -1,15 +1,19 @@
+import  AnnouncementDashboard  from "../components/AnnouncementElements";
 import BackgroundTemplate from "../components/Background";
-import List from "../Components/List";
 
 function Announcements() {
   // !!! ŞİMDİLİK KULLANIM DIŞI
-  const list = (
-    <List
-      color="linear-gradient(135deg, #fff4c0ff 0%, #ffcab5ff 100%)"
-      radiuses="0 0 20px 20px"
-      cardColor="#6fff00ff"
-    />
-  );
+  const list = [
+    {
+      content: "Content1"
+    },
+    {
+      content: "Content2"
+    },
+    {
+      content: "Content3"
+    },
+  ];
 
   return (
     <>
@@ -20,6 +24,7 @@ function Announcements() {
         nisi facere nesciunt maiores corrupti, tempora quis iure molestiae odio.
         Ipsa, rem.
       </div>
+      <AnnouncementDashboard announcements={list}/>
     </>
   );
 }
