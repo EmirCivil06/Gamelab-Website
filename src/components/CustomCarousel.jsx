@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { AnnouncementCard } from "./AnnouncementElements";
 
 function CustomButton({
   className = "",
@@ -44,9 +45,9 @@ export default function Carousel({ slides = [] }) {
         />
         <div className="w-full h-full overflow-hidden ">
           <div className="flex h-full transition-transform duration-500 ease-in-out" style={{transform: `translateX(-${current * 100}%)`}}>
-            {slides.map((item) => (
-                <div className="w-full h-full flex items-center justify-center shrink-0">
-                  {item.content}
+            {slides.map((item, index) => (
+                <div key={index} className="w-full h-full flex items-center justify-center shrink-0">
+                  <AnnouncementCard content={item.content}/>
                 </div>
             ))}
           </div>
