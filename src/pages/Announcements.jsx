@@ -1,23 +1,41 @@
 import  AnnouncementDashboard  from "../components/AnnouncementElements";
 import BackgroundTemplate from "../components/Background";
+import map from "../assets/map.png"
+import PlaceHolder from "../assets/img1.jpeg"
+import GameNight from "../assets/gamenight.png"
+import Gartic from "../assets/gphone.png"
+import logo from "../assets/icon-transparent.png"
 
 function Announcements() {
-  // !!! ŞİMDİLİK KULLANIM DIŞI
   const list = [
     {
-      content: "Content1"
+      social: "https://www.instagram.com/p/DQCnPKvjcaX/?igsh=MTA0Z2xhNzk5emZrMg==",
+      annType: "edu",
+      content: PlaceHolder,
+      header: "C Dili Eğitimi Devam Ediyor!"
     },
     {
-      content: "Content2"
+      social: "https://www.instagram.com/p/DRSa8hFDfBi/?igsh=aTdhNmk3Nmd6MHM4",
+      annType: "fun",
+      content: GameNight,
+      header: "Oyun Gecesi Etkinliği!"
     },
     {
-      content: "Content3"
+      social: "https://www.instagram.com/p/DSC3isxithD/?igsh=andiZThnZ2c4dzdl",
+      content: logo,
+      header: "Önemli Bir Duyuru"
+    },
+    {
+      social: "https://www.instagram.com/reel/DSXjXy_Cii6/?igsh=MW1mdXVzMWNkMXBsNA==",
+      annType: "fun",
+      content: Gartic,
+      header: "Gartic Phone Etkinliği!"
     },
   ];
 
   return (
     <>
-      <BackgroundTemplate />
+      <BackgroundTemplate gradientColor="linear-gradient(135deg, #8874ebe1 0%, #bdace5e1 100%)" image={map}/>
       <div className="page-default">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
         laboriosam error delectus nostrum magnam sapiente ipsa eius perferendis
