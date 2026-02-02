@@ -3,13 +3,14 @@ import edu1 from "../assets/edu1.jpeg";
 import edu2 from "../assets/edu2.jpeg";
 import edu3 from "../assets/edu3.jpeg";
 import game_night_image from "../assets/TwelveMinutesGecesi.jpeg";
-import Icon from "../assets/icon-transparent.png"
+import Icon from "../assets/icon-transparent.png";
 //Swiper bileşenleri ve stilleri
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import AnnouncementDashboard from "../components/AnnouncementDashboard";
 
 //Örnek veri yapısı
 const eventsData = [
@@ -41,7 +42,7 @@ function About() {
         <img className="w-38 h-38" src={Icon}></img>
         {/* Başlık ve paragraf */}
         <div className="max-w-3xl text-center mb-16 text-white">
-          <h1 className="text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">
+          <h1 className="header-p">
             HAKKIMIZDA
           </h1>
           <p className="text-lg leading-relaxed bg-black/20 p-6 rounded-2xl backdrop-blur-sm">
@@ -52,8 +53,7 @@ function About() {
           </p>
         </div>
 
-        
-        <div className="p-[clamp(2rem,3vw,4rem)] grad w-full flex items-center  flex-col">
+        <div className="p-[clamp(2rem,3vw,4rem)] grad w-full flex items-center px-0 pb-0  flex-col">
           {/* Etkinlikler bölümü (MainSwipe) */}
           <div className="w-full max-w-4xl bg-black rounded-[2.5rem] p-10 shadow-2xl border border-white/5 flex flex-col items-center">
             <div className="w-full relative overflow-hidden">
@@ -104,37 +104,53 @@ function About() {
               </Swiper>
             </div>
           </div>
-        
 
-        {/* Radyo Butonları */}
-        <div className="flex flex-row justify-center items-center gap-6 mt-6 py-4 w-full">
-          {eventsData.map((event, index) => (
-            <button
-              key={event.id}
-              onClick={() => mainSwiper?.slideTo(index)}
-              className="group relative flex items-center justify-center p-2 outline-none cursor-pointer"
-            >
-              {/*hover efekti*/}
-              <div
-                className={`absolute w-6 h-6 rounded-full border transition-all duration-300 ${
-                  activeTab === index
-                    ? "border-[#589bff] scale-100 opacity-100"
-                    : "border-transparent scale-50 opacity-0"
-                }`}
-              />
-              {/*butonun kendisi */}
-              <div
-                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  activeTab === index
-                    ? "bg-[#58b4ff] shadow-[0_0_12px_#8874eb]"
-                    : "bg-gray-600 group-hover:bg-gray-400"
-                }`}
-              />
-            </button>
-          ))}
+          {/* Radyo Butonları */}
+          <div className="flex flex-row justify-center items-center gap-6 mt-6 py-4 pb-10 w-full">
+            {eventsData.map((event, index) => (
+              <button
+                key={event.id}
+                onClick={() => mainSwiper?.slideTo(index)}
+                className="group relative flex items-center justify-center p-2 outline-none cursor-pointer"
+              >
+                {/*hover efekti*/}
+                <div
+                  className={`absolute w-6 h-6 rounded-full border transition-all duration-300 ${
+                    activeTab === index
+                      ? "border-[#589bff] scale-100 opacity-100"
+                      : "border-transparent scale-50 opacity-0"
+                  }`}
+                />
+                {/*butonun kendisi */}
+                <div
+                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                    activeTab === index
+                      ? "bg-[#58b4ff] shadow-[0_0_12px_#8874eb]"
+                      : "bg-gray-600 group-hover:bg-gray-400"
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+          <section
+            id="announcements"
+            className="w-full flex flex-col items-center justify-center py-24 another-grad"
+          >
+            <div className="justify-start text-start self-start text-white px-24 pb-4">
+              <p className="header-p">
+                Şuan ne yapıyoruz?
+              </p>
+              <p className="text-lg leading-relaxed bg-black/20 p-6 rounded-2xl">
+                Gamelab olarak bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                bla bla bla bla bla bla bla bla
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              </p>
+            </div>
+
+            <AnnouncementDashboard modifier="w-[85vw]"/>
+          </section>
         </div>
-        </div>
-      
       </div>
 
       {/* Swiper noktalarını radyo butonları varken gizlemek için  */}
