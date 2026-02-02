@@ -1,7 +1,5 @@
-import BackgroundTemplate from "../components/Background";
 import ContactBar from "../components/ContactBar";
 import { FaEnvelope } from "react-icons/fa";
-import Image from "../assets/map.png";
 import wpIcon from "../assets/whatsapp.png";
 import instaIcon from "../assets/instagram.png";
 import dcIcon from "../assets/discord.png"
@@ -33,17 +31,14 @@ export default function Contact() {
 
   return (
     <>
+      
       {/* Özel bir takım stilleri uygulayabilmek için sınıf isiml boş bir element */}
       <span className="contactPage bg-[rgb(112,122,189)]"></span>
       {/* Bu arka plan elemanları akışın dışında kalabilir */}
-      <BackgroundTemplate
-        gradientColor="linear-gradient(135deg, #74ebd5e1 0%, #acb6e5e1 100%)"
-        image={Image}
-      />
 
       {/* Tüm sayfa içeriğini bu ana taşıyıcıya alıyoruz */}
-      <div className="flex flex-col items-center min-h-[75vh] page-default pt-[clamp(2rem,2vw,3rem)] px-4 w-full box-border font-[Pixeloid2] justify-between sm:min-h-[85vh]">
-        <div className="bg-[#f0ffff] rounded-4xl w-full p-[clamp(1.5rem,4vw,3rem)] flex flex-col items-center text-center shadow-lg sm:w-[clamp(75%,77.5%,90%)]">
+      <div className="bg-linear-120 from-[rgba(116,235,213,0.85)] from-0% to-[rgba(172,182,229,0.85)] to-100% flex flex-col items-center min-h-[75vh] page-default w-full box-border font-[Pixeloid2] justify-between sm:min-h-[97vh]">
+        <div className="bg-[#f0ffff] rounded-4xl w-full p-[clamp(1rem,3vw,2.5rem)] flex flex-col items-center text-center shadow-lg sm:w-[clamp(75%,77.5%,90%)] mt-[clamp(2rem,3vw,3.5rem)]">
           <p className="text-[clamp(1.5rem,2.35vw,3.2rem)] m-0">
             Ne Duruyorsun? Haydi!
           </p>{" "}

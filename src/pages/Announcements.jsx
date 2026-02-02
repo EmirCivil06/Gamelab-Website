@@ -1,6 +1,4 @@
 import  AnnouncementDashboard  from "../components/AnnouncementElements";
-import BackgroundTemplate from "../components/Background";
-import map from "../assets/map.png"
 import PlaceHolder from "../assets/img1.jpeg"
 import GameNight from "../assets/gamenight.png"
 import Gartic from "../assets/gphone.png"
@@ -35,14 +33,12 @@ function Announcements() {
 
   return (
     <>
-      <BackgroundTemplate gradientColor="linear-gradient(135deg, #8874ebe1 0%, #bdace5e1 100%)" image={map}/>
       <div className="page-default">
         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
         laboriosam error delectus nostrum magnam sapiente ipsa eius perferendis
         nisi facere nesciunt maiores corrupti, tempora quis iure molestiae odio.
         Ipsa, rem.
       </div>
-      <AnnouncementDashboard announcements={list}/>
     </>
   );
 }
