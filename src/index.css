@@ -2,56 +2,65 @@
 
 /* Birden fazla olan element için tek tek uğraşmak yerine farklı stil sınıfları */
 .cb-item {
-    @apply flex flex-col items-center my-0 mx-[clamp(0.2rem,2vw,1.5rem)] text-[clamp(0.775rem,2vw,1.2rem)] text-white text-center
+  @apply flex flex-col items-center my-0 mx-[clamp(0.2rem,2vw,1.5rem)] text-[clamp(0.775rem,2vw,1.2rem)] text-white text-center;
 }
 
 .cb-img {
-    @apply w-[clamp(4.5rem,10vw,8rem)] h-[clamp(4.5rem,10vw,8rem)] mx-[clamp(0.5rem,1.5vw,1.75rem)] mt-0 mb-2.5 transition-transform drop-shadow-lg hover:scale-110 active:scale-90
+  @apply w-[clamp(4.5rem,10vw,8rem)] h-[clamp(4.5rem,10vw,8rem)] mx-[clamp(0.5rem,1.5vw,1.75rem)] mt-0 mb-2.5 transition-transform drop-shadow-lg hover:scale-110 active:scale-90;
 }
 
 .page-default {
-    @apply mt-[clamp(3.35rem,3.6rem,4.1rem)]
+  @apply py-[clamp(2.5rem,2.5vw,4rem)] px-[clamp(2rem,2vw,3rem)];
 }
 
 .navbar-btn {
-    @apply bg-none border-none text-white text-[clamp(14px,1.75vw,17.5px)] my-1 mx-0.5 cursor-pointer hover:text-gray-400 active:scale-90 sm:my-0 sm:mx-[clamp(0.6rem,1vw,1.75rem)] transition duration-300 select-none
+  @apply bg-none border-none text-white text-[clamp(14px,1.75vw,17.5px)] my-1 mx-0.5 cursor-pointer hover:text-gray-400 active:scale-90 sm:my-0 sm:mx-[clamp(0.6rem,1vw,1.75rem)] transition duration-300 select-none;
+}
+
+html {
+  @apply scroll-smooth;
 }
 
 /* Bize ulaşın sayfasının scrollbarı olmayacak */
 @layer base {
-    @media (min-height: 600px) {
-        body:has(.contactPage) {
-            @apply overflow-y-hidden
-        }
-    }
+  .grad {
+    background: #ffffff;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #f0f4ff 3%,
+      #f6f5ff 97%,
+      rgba(235, 179, 255, 0) 100%
+    );
+  }
 }
 
 /* Arkaplan animasyonu */
 @theme {
-    --animate-background: backgroundAnim 50s linear infinite
+  --animate-background: backgroundAnim 50s linear infinite;
 }
 
 @keyframes backgroundAnim {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 512px 512px;
-    }
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 512px 512px;
+  }
 }
 
 /* Fontlar */
 @font-face {
-    font-family: 'Pixelon';
-    src: url(../src/assets/Pixelon.ttf);
+  font-family: "Pixelon";
+  src: url(../src/assets/Pixelon.ttf);
 }
 
 @font-face {
-    font-family: 'Pixeloid2';
-    src: url(../src/assets/Pixeloid2.ttf);
+  font-family: "Pixeloid2";
+  src: url(../src/assets/Pixeloid2.ttf);
 }
 
 @font-face {
-    font-family: 'PixeloidMono';
-    src: url(../src/assets/PixeloidMono.ttf);
+  font-family: "PixeloidMono";
+  src: url(../src/assets/PixeloidMono.ttf);
 }
