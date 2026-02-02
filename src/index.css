@@ -17,20 +17,34 @@
   @apply bg-none border-none text-white text-[clamp(14px,1.75vw,17.5px)] my-1 mx-0.5 cursor-pointer hover:text-gray-400 active:scale-90 sm:my-0 sm:mx-[clamp(0.6rem,1vw,1.75rem)] transition duration-300 select-none;
 }
 
+.header-p {
+   @apply text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg font-[Pixeloid2]; 
+}
+
 html {
   @apply scroll-smooth;
 }
 
-/* Bize ulaşın sayfasının scrollbarı olmayacak */
 @layer base {
   .grad {
     background: #ffffff;
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0) 0%,
-      #f0f4ff 3%,
-      #f6f5ff 97%,
-      rgba(235, 179, 255, 0) 100%
+      #f0f4ff 2%,
+      #f6f5ff 96.5%,
+      rgba(0, 0, 0, 0) 98%
+    );
+  }
+
+  .another-grad {
+    background: #ffffff;
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 0%,
+      #7008e7 4%,
+      #7008e7 96.5%,
+      rgba(255, 255, 255, 0) 98%
     );
   }
 }
