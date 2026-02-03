@@ -42,9 +42,7 @@ function About() {
         <img className="w-38 h-38" src={Icon}></img>
         {/* Başlık ve paragraf */}
         <div className="max-w-3xl text-center mb-16 text-white">
-          <h1 className="header-p">
-            HAKKIMIZDA
-          </h1>
+          <h1 className="header-p">HAKKIMIZDA</h1>
           <p className="text-lg leading-relaxed bg-black/20 p-6 rounded-2xl backdrop-blur-sm">
             Pamukkale Üniversitesi Dijital Oyun Geliştirme ve Tasarım
             topluluğuna hoşgeldiniz. Amacımız sadece oyun geliştirmek değil,
@@ -137,18 +135,16 @@ function About() {
             className="w-full flex flex-col items-center justify-center py-24 another-grad"
           >
             <div className="justify-start text-start self-start text-white px-24 pb-4">
-              <p className="header-p">
-                Şuan ne yapıyoruz?
-              </p>
-              <p className="text-lg leading-relaxed bg-black/20 p-6 rounded-2xl">
-                Gamelab olarak bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
-                bla bla bla bla bla bla bla bla
-                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+              <p className="header-p mb-2">Şuan ne yapıyoruz?</p>
+              <p className="text-xl leading-relaxed bg-black/20 p-6 rounded-2xl my-2">
+                Gamelab olarak faaliyetlerimize devam etmekteyiz. Oyun Gecesi
+                etkinlikleri, Kutu Oyunu yarışmaları, atölye eğitimleri ve daha
+                birçok etkinlik. Bütün bunlara aşağıda yer alan duyuru
+                bölümümüzden ulaşabilirsiniz.
               </p>
             </div>
 
-            <AnnouncementDashboard modifier="w-[85vw]"/>
+            <AnnouncementDashboard />
           </section>
         </div>
       </div>

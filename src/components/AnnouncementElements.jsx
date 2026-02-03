@@ -46,27 +46,21 @@ function AnnouncementCard({ Data }) {
   return (
     <>
       <div
-        className={`${bgColor} ${textColor} flex w-[92%] h-[92.5%] rounded-[15px] gap-[clamp(0.2rem,0.2vw,0.4rem)] p-[clamp(0.2rem,0.5vw,0.7rem)] flex-row shadow-lg items-center text-[clamp(0.5rem,1vw,1rem)] justify-around`}
+        className={`${bgColor} ${textColor} flex w-[92%] h-[92.5%] rounded-[15px] gap-[clamp(0.5rem,4vw,6rem)] p-[clamp(0.2rem,0.5vw,0.7rem)] px-[clamp(0.3rem,2vw,3rem)] flex-row shadow-lg text-[clamp(0.5rem,2vw,1.75rem)] items-center `}
         key={Data.id}
       >
-        <div className="flex  flex-col gap-3">
-          <b>{Data.Header}</b>
-          <div className="w-full max-w-[clamp(4rem,92.5%,13.5rem)] aspect-video">
-            <a
-              href={Data.Media}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center w-full h-full hover:opacity-80 transition-opacity duration-200"
-            >
-              <img
-                src={Data.image}
-                alt="Sosyal medya içeriği"
-                className="w-full h-full object-contain"
-              />
-            </a>
-          </div>
-        <small>{new Date(Data.created).toLocaleDateString("tr-TR")}</small>
+       <a href={Data.Media} target="_blank" className="contents">
+          <img src={Data.imageUrl} className="h-[80%] w-auto max-w-[45%] mx-[clamp(0.5rem,3vw,4rem)] rounded-lg"></img>
+       </a>
+       <div className="flex flex-col mt-[clamp(0.25rem,2.5vw,2.75rem)]">
+        <h1 className="text-[clamp(0.5rem,1.75vw,3rem)] font-bold">
+          {Data.Header}
+        </h1>
+        <div>
+          {Data.Content}
         </div>
+        <small className="mt-[clamp(0.25rem,2vw,2.25rem)]">{new Date(Data.created).toLocaleDateString("tr-TR")}</small>
+       </div>
       </div>
     </>
   );

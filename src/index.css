@@ -25,6 +25,8 @@ html {
   @apply scroll-smooth;
 }
 
+
+
 @layer base {
   .grad {
     background: #ffffff;
