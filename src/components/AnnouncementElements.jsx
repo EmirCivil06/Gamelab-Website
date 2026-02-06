@@ -21,7 +21,7 @@ function CustomButton({
   );
 }
 
-function AnnouncementCard({ Data }) {
+function Card({ Data }) {
   let textColor = "",
     bgColor = "";
   switch (Data.Type) {
@@ -38,35 +38,36 @@ function AnnouncementCard({ Data }) {
       textColor = "text-violet-900";
       break;
     default:
-      bgColor = "bg-green-200";
-      textColor = "text-green-300";
+      bgColor = "bg-[#FFF1D6]";
+      textColor = "text-[#6D3A1E]";
       break;
   }
 
   return (
     <>
       <div
-        className={`${bgColor} ${textColor} flex w-[92%] h-[92.5%] rounded-[15px] gap-[clamp(0.5rem,4vw,6rem)] p-[clamp(0.2rem,0.5vw,0.7rem)] px-[clamp(0.3rem,2vw,3rem)] flex-row shadow-lg text-[clamp(0.5rem,2vw,1.75rem)] items-center `}
+        className={`${bgColor} ${textColor} flex w-[92%] h-[87.5%] rounded-[15px] gap-[clamp(0.5rem,4vw,6rem)] p-[clamp(0.2rem,0.5vw,0.7rem)] px-[clamp(0.3rem,2vw,3rem)] flex-row shadow-lg text-[clamp(0.5rem,1.5vw,1.75rem)] items-center select-none`}
         key={Data.id}
       >
-       <a href={Data.Media} target="_blank" className="contents">
-          <img src={Data.imageUrl} className="h-[80%] w-auto max-w-[45%] mx-[clamp(0.5rem,3vw,4rem)] rounded-lg"></img>
+       <a href={Data.Media ? Data.Media :  "https://www.instagram.com/paugamelab/p/DDpfGc6OcIh/" } target="_blank" rel="noreferrer" className="contents">
+          <img src={Data.imageUrl} className="lg:h-[80%] h-[50%] w-auto max-w-[45%] sm:mx-[clamp(0.45rem,3vw,4rem)] mx-[clamp(0.35rem,2.5vw,3rem)] rounded-xl"></img>
        </a>
        <div className="flex flex-col mt-[clamp(0.25rem,2.5vw,2.75rem)]">
-        <h1 className="text-[clamp(0.5rem,1.75vw,3rem)] font-bold">
+        <h1 className="text-[clamp(0.65rem,1.7vw,3rem)] font-bold">
           {Data.Header}
         </h1>
         <div>
           {Data.Content}
         </div>
-        <small className="mt-[clamp(0.25rem,2vw,2.25rem)]">{new Date(Data.created).toLocaleDateString("tr-TR")}</small>
+         
+        {Data.projectPublished ? <small className="mt-[clamp(0.2rem,0.75vw,1.5rem)] sm:mt-[clamp(0.25rem,2vw,2.25rem)]">{new Date(Data.projectPublished).toLocaleDateString("tr-TR")}</small> :  <small className="mt-[clamp(0.2rem,0.75vw,1.5rem)] sm:mt-[clamp(0.25rem,2vw,2.25rem)]">{new Date(Data.created).toLocaleDateString("tr-TR")}</small>}
        </div>
       </div>
     </>
   );
 }
 
-export default function Carousel({ announcementItems = [] }) {
+export default function Carousel({ items = [], button = "", container = "", slider = "", cardGrandparent = "", cardParent = ""}) {
   const [current, setCurrent] = useState(0);
   const [startX, setStartX] = useState(null);
   const [isDragging, setIsDragging] = useState(false);
@@ -91,29 +92,29 @@ export default function Carousel({ announcementItems = [] }) {
   };
 
   const nextSlide = () => {
-    if (announcementItems.length === 0) {
+    if (items.length === 0) {
       return;
     }
     setCurrent((prev) =>
-      prev === announcementItems.length - 1 ? 0 : prev + 1,
+      prev === items.length - 1 ? 0 : prev + 1,
     );
   };
 
   const prevSlide = () => {
-    if (announcementItems.length === 0) {
+    if (items.length === 0) {
       return;
     }
     setCurrent((prev) =>
-      prev === 0 ? announcementItems.length - 1 : prev - 1,
+      prev === 0 ? items.length - 1 : prev - 1,
     );
   };
 
-  const buttonStyle = `p-[clamp(0.25vw,0.3vw,0.4vw)] rounded-lg h-[17.5%] bg-violet-600 hover:bg-violet-700 text-white transition duration-300 ${announcementItems.length === 0 ? "cursor-not-allowed" : "cursor-pointer"}`;
+  const buttonStyle = `p-[clamp(0.25vw,0.3vw,0.4vw)] rounded-lg h-[17.5%] bg-violet-600 hover:bg-violet-700 text-white transition duration-300 ${items.length === 0 ? "cursor-not-allowed" : "cursor-pointer"} ${button}`;
   const buttonIconClass = "w-[clamp(0.5rem,0.9vw,1.2rem)] h-auto";
 
   return (
     <>
-      <div className="flex h-full items-center gap-[clamp(4px,6px,8px)]">
+      <div className={`flex h-full items-center gap-[clamp(4px,6px,8px)] ${container}`}>
         <CustomButton
           className={buttonStyle}
           buttonIconClass={buttonIconClass}
@@ -121,28 +122,28 @@ export default function Carousel({ announcementItems = [] }) {
           onClick={prevSlide}
         />
         <div
-          className="w-full h-full overflow-hidden touch-pan-y"
+          className={`w-full h-full overflow-hidden touch-pan-y ${slider}`}
           onMouseDown={(e) => handleStart(e.clientX)}
           onMouseUp={(e) => handleEnd(e.clientX)}
           onMouseLeave={(e) => handleEnd(e.clientX)}
           onTouchStart={(e) => handleStart(e.touches[0].clientX)}
           onTouchEnd={(e) => handleEnd(e.changedTouches[0].clientX)}
         >
-          {announcementItems.length === 0 ? (
+          {items.length === 0 ? (
             <span className="flex h-full items-center justify-center text-gray-400">
-              <b>Duyuru yok :/</b>
+              <b>Burası boş :/</b>
             </span>
           ) : (
             <div
-              className="flex h-full transition-transform duration-500 ease-in-out opa"
+              className={`flex h-full transition-transform duration-500 ease-in-out ${cardGrandparent}`}
               style={{ transform: `translateX(-${current * 100}%)` }}
             >
-              {announcementItems.map((item, index) => (
+              {items.map((item, index) => (
                 <div
                   key={index}
-                  className="w-full h-[90%] flex items-center justify-center shrink-0"
+                  className={`w-full h-[90%] flex items-center justify-center shrink-0 ${cardParent}`}
                 >
-                  <AnnouncementCard Data={item} />
+                  <Card Data={item} />
                 </div>
               ))}
             </div>

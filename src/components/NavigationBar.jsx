@@ -3,14 +3,14 @@ import icon from "../assets/icon.jpg";
 // Web sayfaları arası geçiş için kullanılan bileşen
 export default function NavigationBar() {
   return (
-    <div className="fixed top-0 left-0 right-0 bg-linear-to-r from-[#3b82f6] to-[#14b8a6] flex items-center justify-between px-3.5 rounded-b-3xl shadow-md z-1000 h-[clamp(3.25rem,3.5rem,4rem)] sm:px-9">
+    <div className="fixed top-0 left-0 right-0 bg-linear-to-r from-[#3b82f6] to-[#14b8a6] flex items-center justify-between px-3.5 rounded-b-3xl shadow-md z-1000 h-[clamp(3rem,3.25vh,4rem)] sm:px-9">
       {/* Sağdaki buton elementleri */}
       <div className="flex gap-[clamp(1rem,3vw,2.75rem)]">
-        <a href="#projects" style={{ display: "contents" }}>
-          <button className="navbar-btn">Projeler</button>
-        </a>
         <a href="#announcements" style={{ display: "contents" }}>
           <button className="navbar-btn">Duyurular</button>
+        </a>
+        <a href="#projects" style={{ display: "contents" }}>
+          <button className="navbar-btn">Projeler</button>
         </a>
         <a href="#contact" style={{ display: "contents" }}>
           <button className="navbar-btn">Sosyal</button>
