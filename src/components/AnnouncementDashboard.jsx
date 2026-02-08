@@ -1,30 +1,31 @@
-import Carousel from "./AnnouncementElements";
-import { useState, useEffect } from "react";
+import { useState, useEffect, lazy, Suspense } from "react";
+const Carousel = lazy(() => import("./Carousel"));
 import pb from "../lib/pocketbase";
-import Placeholder from "../assets/icon-transparent.png"
+import Placeholder from "../../public/icon-transparent.png";
 
 // Announcement Dashboard
 export default function AnnouncementDashboard({ modifier = "" }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-  const fetchdata = async () => {
-    const records = await pb.collection("Items").getFullList({
-      filter: "(isArchived = false || isArchived = null) && Type != 'Project'",
-      sort: "-created",
-      requestKey: null
-    });
+    const fetchdata = async () => {
+      const records = await pb.collection("Items").getFullList({
+        filter:
+          "(isArchived = false || isArchived = null) && Type != 'Project'",
+        sort: "-created",
+        requestKey: null,
+      });
 
-    const mapped = records.map((r) => ({
-      ...r,
-      imageUrl: r.Image ? pb.files.getURL(r, r.Image) : Placeholder
-    }))
+      const mapped = records.map((r) => ({
+        ...r,
+        imageUrl: r.Image ? pb.files.getURL(r, r.Image) : Placeholder,
+      }));
 
-    setData(mapped);
-  };
+      setData(mapped);
+    };
 
-  fetchdata();
-}, []);
+    fetchdata();
+  }, []);
 
   return (
     <>
@@ -34,7 +35,15 @@ export default function AnnouncementDashboard({ modifier = "" }) {
         <div className="text-[clamp(0.6rem,1.3vw,1.4rem)]">
           <b>En Yeni Duyurular</b>
         </div>
-        <Carousel items={data} />
+        <Suspense
+          fallback={
+            <div className="text-[clamp(0.6rem,1vw,1.25rem)]">
+              Yükleniyor...
+            </div>
+          }
+        >
+          <Carousel items={data} />
+        </Suspense>
       </div>
     </>
   );

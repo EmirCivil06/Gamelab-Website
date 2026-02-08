@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Icon from "../assets/icon-transparent.png";
+import Icon from "/icon-transparent.png";
 //Swiper bileşenleri ve stilleri
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, EffectFade } from "swiper/modules";
@@ -45,8 +45,8 @@ function About() {
         <img className="sm:w-38 sm:h-38 w-30 h-30 mb-2" src={Icon}></img>
         {/* Başlık ve paragraf */}
         <div className="max-w-3xl sm:p-0 px-4 text-center mb-16 text-white">
-          <h1 className="header-text">HAKKIMIZDA</h1>
-          <p className="paragraph my-0! backdrop-blur-sm">
+          <h1 className="header-text text-center!">HAKKIMIZDA</h1>
+          <p className="paragraph my-0! text-center! backdrop-blur-sm">
             Pamukkale Üniversitesi Dijital Oyun Geliştirme ve Tasarım
             topluluğuna hoşgeldiniz. Amacımız sadece oyun geliştirmek değil,
             aynı zamanda üniversite öğrencilerini ortak tutkular etrafında
@@ -55,9 +55,9 @@ function About() {
         </div>
 
         <div className="p-[clamp(2rem,3vw,4rem)] about-dashboard-gradient gradient-base w-full flex items-center px-0 pb-0 flex-col">
-          <h1 className="header-text text-[clamp(1.5rem,2vw,3rem)]! py-3 mb-1!">ETKİNLİKLERİMİZDEN BAZILARI</h1>
+          <h1 className="header-text text-[clamp(1.5rem,2vw,3rem)]! py-3 mb-1!">ETKİNLİKLERİMİZ</h1>
           {/* Etkinlikler bölümü (MainSwipe) */}
-          <div className="xl:w-full w-[90%] max-w-5xl bg-black rounded-[2.5rem] sm:p-10 p-5 shadow-2xl border border-white/5 flex flex-col items-center">
+          <div className="xl:w-full w-[90%] max-w-5xl bg-black rounded-[2.5rem] lg:py-4! sm:p-10 p-5 shadow-2xl border border-white/5 flex flex-col items-center">
             {couldntFetch ? (
               <div>
                 <h3 className="sm:text-3xl text-[20px] font-bold text-white mb-3 text-center">
@@ -114,6 +114,7 @@ function About() {
                                   src={url}
                                   alt="Etkinlikler"
                                   className="w-full h-full object-cover grayscale-10 hover:grayscale-0 transition-all duration-500"
+                                  referrerPolicy="no-referrer"
                                 />
                               }
                             </div>
@@ -137,7 +138,7 @@ function About() {
               >
                 {/*hover efekti*/}
                 <div
-                  className={`absolute w-[clamp(1rem,1.5vw,2rem)] h-[clamp(1rem,1.5vw,2rem)] rounded-full border transition-all duration-300 ${
+                  className={`absolute w-[clamp(1rem,1.25vw,2rem)] h-[clamp(1rem,1.25vw,2rem)] rounded-full border transition-all duration-300 ${
                     activeTab === index
                       ? "border-[#589bff] scale-100 opacity-100"
                       : "border-transparent scale-50 opacity-0"
@@ -145,7 +146,7 @@ function About() {
                 />
                 {/*butonun kendisi */}
                 <div
-                  className={`w-[clamp(0.5rem,0.75vw,1rem)] h-[clamp(0.5rem,0.75vw,1rem)] rounded-full transition-all duration-300 ${
+                  className={`w-[clamp(0.5rem,0.75vw,0.75rem)] h-[clamp(0.5rem,0.75vw,0.75rem)] rounded-full transition-all duration-300 ${
                     activeTab === index
                       ? "bg-[#58b4ff] shadow-[0_0_12px_#8874eb]"
                       : "bg-gray-600 group-hover:bg-gray-400"

@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "navItems": [
+        {
+          "label": "Duyurular",
+          "value": "#announcements",
+          "id": "nav-ann"
+        },
+        {
+          "label": "Projeler",
+          "value": "#projects",
+          "id": "nav-proj"
+        },
+        {
+          "label": "Sosyal",
+          "value": "#contact",
+          "id": "nav-cont"
+        }
+      ]
+    },
+    {
+      "contactItems": [
+        {
+          "icon": "/whatsapp.png",
+          "socialLink": "https://chat.whatsapp.com/Ge8iLbuu2KaKe61hLGHRzq",
+          "alt": "Gamelab Whatsapp Topluluğu",
+          "text": "Whatsapp Topluluğu",
+          "id": "iconwp"
+        },
+        {
+          "icon": "/instagram.png",
+          "socialLink": "https://www.instagram.com/paugamelab/",
+          "alt": "Gamelab Instagram Sayfası",
+          "text": "Instagram Sayfamız",
+          "id": "iconinsta"
+        },
+        {
+          "icon": "/discord.png",
+          "socialLink": "https://discord.gg/WJR96dUbP7",
+          "alt": "Gamelab Discord Sunucusu",
+          "text": "Discord Sunucusu",
+          "id": "icondc"
+        }
+      ]
+    }
+  ]
+}

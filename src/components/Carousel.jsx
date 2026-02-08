@@ -46,7 +46,7 @@ function Card({ Data }) {
   return (
     <>
       <div
-        className={`${bgColor} ${textColor} flex w-[92%] h-[87.5%] rounded-[15px] gap-[clamp(0.5rem,4vw,6rem)] p-[clamp(0.2rem,0.5vw,0.7rem)] px-[clamp(0.3rem,2vw,3rem)] flex-row shadow-lg text-[clamp(0.5rem,1.5vw,1.75rem)] items-center select-none`}
+        className={`${bgColor} ${textColor} flex lg:w-[92%] w-[95%] h-[87.5%] rounded-[15px] gap-[clamp(0.5rem,4vw,6rem)] p-[clamp(0.2rem,0.5vw,0.7rem)] px-[clamp(0.3rem,2vw,3rem)] flex-row drop-shadow-lg text-[clamp(0.5rem,1.5vw,1.75rem)] items-center select-none`}
         key={Data.id}
       >
        <a href={Data.Media ? Data.Media :  "https://www.instagram.com/paugamelab/p/DDpfGc6OcIh/" } target="_blank" rel="noreferrer" className="contents">
@@ -109,7 +109,7 @@ export default function Carousel({ items = [], button = "", container = "", slid
     );
   };
 
-  const buttonStyle = `p-[clamp(0.25vw,0.3vw,0.4vw)] rounded-lg h-[17.5%] bg-violet-600 hover:bg-violet-700 text-white transition duration-300 ${items.length === 0 ? "cursor-not-allowed" : "cursor-pointer"} ${button}`;
+  const buttonStyle = `p-[clamp(0.2rem,0.4vw,0.5rem)] rounded-md lg:rounded-lg h-[17.5%] bg-violet-600 hover:bg-violet-700 text-white transition duration-300 ${items.length === 0 ? "cursor-not-allowed" : "cursor-pointer"} ${button}`;
   const buttonIconClass = "w-[clamp(0.5rem,0.9vw,1.2rem)] h-auto";
 
   return (
