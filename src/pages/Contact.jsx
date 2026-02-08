@@ -1,33 +1,10 @@
 import ContactBar from "../components/ContactBar";
 import { FaEnvelope } from "react-icons/fa";
-import wpIcon from "../assets/whatsapp.png";
-import instaIcon from "../assets/instagram.png";
-import dcIcon from "../assets/discord.png"
+import config from "../data/component-config.json"
 
 export default function Contact() {
-  const contactBarContent = [
-    {
-      icon: wpIcon,
-      socialLink: "https://chat.whatsapp.com/Ge8iLbuu2KaKe61hLGHRzq",
-      alt: "Gamelab Whatsapp Topluluğu",
-      text: "Whatsapp Topluluğu",
-      id: "iconwp"
-    },
-    {
-      icon: instaIcon,
-      socialLink: "https://www.instagram.com/paugamelab/",
-      alt: "Gamelab Instagram Sayfası",
-      text: "Instagram Sayfamız",
-      id: "iconinsta"
-    },
-    {
-      icon: dcIcon,
-      socialLink: "https://discord.gg/WJR96dUbP7",
-      alt: "Gamelab Discord Sunucusu",
-      text: "Discord Sunucusu",
-      id: "icondc"
-    }
-  ];
+
+  const contactItems = config.items.find(item => item.contactItems)?.contactItems || []
 
   return (
     <>
@@ -50,7 +27,7 @@ export default function Contact() {
         </div>
         {/* Linkleri buton halinde barındıran kısım */}
         <ContactBar
-          content={contactBarContent}
+          content={contactItems}
           colorStyling={"bg-linear-135 from-[rgb(86,205,183)] to-[rgb(132,142,199)]"}
         />
 
